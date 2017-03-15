@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>学习本该如此</title>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/blog.css"/>
+    <link rel="stylesheet" href="../css/content.css"/>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</head>
+<header>
+    <nav class="navbar navbar-inverse navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">胡海康</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="../note.html">笔记</a></li>
+                    <li><a href="#">音乐</a></li>
+                    <li><a href="#">关于</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-success">搜索</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <article class="well">
+                <section class="article-content clearfix article-page">
+                    CSS 3中的弹性布局概述：<br />
+                    CSS Flexible Box模块中定义的弹性盒布局技术，可以根据屏幕尺寸或浏览器窗口尺寸自动调整页面中各局部区域的显示方式，<br />
+                    即实现非常灵活的布局处理。<br /> <br />
+                    弹性盒布局的指定方法为：对需要布局的元素的容器元素使用display:flex;样式属性。<br />
+                    该容器元素中的每一个元素均被称为“Flex item”，将该容器元素称为“Flex container”。<br /> <br />
+                    弹性盒布局方式与使用float等样式属性进行的布局方式的一个主要区别为，当使用float等样式属性时，需要对容器中每一个元素指定样式属性，<br />
+                    当使用弹性盒布局时，只需对容器元素指定样式属性。<br /> <br />
+                    　设置元素排列方向<br /> <br />
+                    　　可以通过flex-direction样式属性的使用来控制容器中所有子元素的排列方向，可指定值如下所示。<br /> <br />
+                    row:横向排列（默认值）<br />
+                    row-reverse:横向反向排列<br />
+                    column:纵向排列<br />
+                    column-reverse:纵向反向排列<br /> <br />
+                    　使用order样式属性指定排列顺序<br /> <br />
+                    　　使用弹性盒布局的时候，可以通过order属性来改变各元素的显示顺序。可以在每个元素的样式中加入order属性，<br />
+                    该属性使用一个表示序号的整数属性值，浏览器在显示的时候根据该序号从小到大来显示这些元素。<br /> <br />
+                    　设置元素宽度及高度<br /> <br />
+                    　　接下来首先介绍如何设置被横向排列的每一个元素的宽度。<br /> <br />
+                    　　可以通过flex属性值的使用使所有子元素的总宽度等于容器宽度。<br /> <br />
+                </section>
+                <div align="center">
+                    <section class="article-copyright">
+                        <p>
+                            上一篇：<a
+                                href=""></a>
+                            下一篇：<a
+                                href=""></a>
+                        </p>
+
+                    </section>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<footer class="media-bottom text-center">
+    <p><span class="glyphicon glyphicon-envelope"></span>邮箱：<a href="mailto:15669504940@163.com">15669504940@163.com</a></p>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+</body>
+</html>

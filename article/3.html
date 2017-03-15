@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>学习本该如此</title>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/blog.css"/>
+    <link rel="stylesheet" href="../css/content.css"/>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</head>
+<header>
+    <nav class="navbar navbar-inverse navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">胡海康</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="../note.html">笔记</a></li>
+                    <li><a href="#">音乐</a></li>
+                    <li><a href="#">关于</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-success">搜索</button>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <article class="well">
+                <section class="article-content clearfix article-page">
+                    <div id="topics">
+                        <div class = "post">
+                            <h1 class = "postTitle">
+                                <a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/mrweb/archive/2013/01/29/2881996.html">容器内元素float时，容器自动高度的解决方案</a>
+                            </h1>
+                            <div class="clear"></div>
+                            <div class="postBody">
+                                <div id="cnblogs_post_body"><p>先看HTML代码如下：</p>
+                                    <div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="wrap"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 2</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="header"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 3</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">h1</span><span style="color: #0000ff;">&gt;</span>three colums layout.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">h1</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 4</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 5</span>
+<span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="content"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 7</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="main"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 8</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>Hello,CSS &amp; HTML.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 9</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>I love this game.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">10</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">11</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="left"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">12</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>I'm the sub colum.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">13</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">14</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="right"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">15</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>I'm the extra colum.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">16</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">17</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">18</span>
+<span style="color: #008080;">19</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="footer"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">20</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>Copyright<span style="color: #ff0000;">&amp;copy;</span> by zhounuhong.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">21</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">22</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span></pre>
+                                    </div>
+                                    <p>其中，content包含了3个浮动的层。它们对应的CSS如下：</p>
+                                    <div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #800000;">body </span>{<span style="color: #ff0000;"> font-size</span>:<span style="color: #0000ff;">12px</span>;<span style="color: #ff0000;"> font-family</span>:<span style="color: #0000ff;">Verdana, Geneva, sans-serif</span>; }
+<span style="color: #008080;"> 2</span>
+<span style="color: #008080;"> 3</span> <span style="color: #800000;">#wrap </span>{<span style="color: #ff0000;"> margin</span>:<span style="color: #0000ff;">10px auto</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">950px</span>; }
+<span style="color: #008080;"> 4</span>
+<span style="color: #008080;"> 5</span> <span style="color: #800000;">#header </span>{<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#000</span>;<span style="color: #ff0000;"> color</span>:<span style="color: #0000ff;">#fff</span>;<span style="color: #ff0000;"> padding</span>:<span style="color: #0000ff;">10px</span>;<span style="color: #ff0000;"> margin-bottom</span>:<span style="color: #0000ff;">10px</span>; }
+<span style="color: #008080;"> 6</span>
+<span style="color: #008080;"> 7</span> <span style="color: #800000;">#content </span>{<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">100%</span>;<span style="color: #ff0000;"> margin-bottom</span>:<span style="color: #0000ff;">10px</span>; }
+<span style="color: #008080;"> 8</span> <span style="color: #800000;">#main </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">left</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">550px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#dedede</span>;<span style="color: #ff0000;"> margin-left</span>:<span style="color: #0000ff;">200px</span>;<span style="color: #ff0000;"> _display</span>:<span style="color: #0000ff;">inline</span>; }
+<span style="color: #008080;"> 9</span> <span style="color: #800000;">#left </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">left</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">190px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#F90</span>;<span style="color: #ff0000;"> margin-left</span>:<span style="color: #0000ff;">-750px</span>; }
+<span style="color: #008080;">10</span> <span style="color: #800000;">#right </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">right</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">190px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#3CC</span>; }
+<span style="color: #008080;">11</span>
+<span style="color: #008080;">12</span> <span style="color: #800000;">#footer </span>{<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#666</span>;<span style="color: #ff0000;"> color</span>:<span style="color: #0000ff;">#000</span>;<span style="color: #ff0000;"> text-align</span>:<span style="color: #0000ff;">center</span>;<span style="color: #ff0000;"> padding</span>:<span style="color: #0000ff;">5px 10px</span>; }</pre>
+                                    </div>
+                                    <p>以上CSS只能在ie6下正常（我测试了chrome &nbsp;firefox &nbsp;ie8 &nbsp; ie6），而其它浏览器下，footer与content重叠了，且保持了float的关系。</p>
+                                    <p><span style="text-decoration: underline;"><strong>尝试解决方法一：结果失败。</strong></span></p>
+                                    <p>为footer添加clear:both属性，解决了重叠的问题，但是content下的margin-bottom:10px也没有了。</p>
+                                    <p>再次修改content的margin-bottom:10px为padding-bottom:10px，问题还是没有得到解决。</p>
+                                    <p>看来，从margin或padding下手个人暂时没有办法解决了。只好另外找其它的方法。</p>
+                                    <p>&nbsp;</p>
+                                    <p><span style="text-decoration: underline; color: #ff0000;"><strong>尝试解决方法二：成功。</strong></span></p>
+                                    <p>为content添加overflow:hidden，问题得到解决。</p>
+                                    <p>&nbsp;</p>
+                                    <p><span style="text-decoration: underline; color: #ff0000;"><strong>尝试解决方法三：成功。</strong></span></p>
+                                    <p>在HTML中，&lt;div id="right"&gt;...&lt;/div&gt;之后添加一个&lt;div class="clearfix"&gt;&lt;/div&gt;，其样式如下：</p>
+                                    <div class="cnblogs_code">
+                                        <pre><span style="color: #008080;">1</span> <span style="color: #800000;">.clearfix </span>{<span style="color: #ff0000;"> clear</span>:<span style="color: #0000ff;">both</span>;<span style="color: #ff0000;"> display</span>:<span style="color: #0000ff;">block</span>;<span style="color: #ff0000;"> height</span>:<span style="color: #0000ff;">0px</span>;<span style="color: #ff0000;"> overflow</span>:<span style="color: #0000ff;">hidden</span>; }</pre>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <p><span style="text-decoration: underline; color: #ff0000;"><strong>尝试解决方法四：成功。</strong></span></p>
+                                    <p>为content添加属性 display:inline-block，问题得到解决。</p>
+                                    <p>&nbsp;</p>
+                                    <p><span style="text-decoration: underline; color: #ff0000;"><strong>尝试解决方法五：成功。</strong></span></p>
+                                    <p>为content添加一个伪属性集，如下：</p>
+                                    <div class="cnblogs_code">
+<pre><span style="color: #008080;">1</span> <span style="color: #800000;">#content:after </span>{
+<span style="color: #008080;">2</span> <span style="color: #ff0000;">    content</span>:<span style="color: #0000ff;">'.'</span>;
+<span style="color: #008080;">3</span> <span style="color: #ff0000;">    height</span>:<span style="color: #0000ff;">0</span>;
+<span style="color: #008080;">4</span> <span style="color: #ff0000;">    visibility</span>:<span style="color: #0000ff;">hidden</span>;
+<span style="color: #008080;">5</span> <span style="color: #ff0000;">    display</span>:<span style="color: #0000ff;">block</span>;
+<span style="color: #008080;">6</span> <span style="color: #ff0000;">    clear</span>:<span style="color: #0000ff;">both</span>;
+<span style="color: #008080;">7</span> }</pre>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <p><span style="text-decoration: underline; color: #ff0000;"><strong>尝试解决方法六：成功。</strong></span></p>
+                                    <p>为content添加一个属性float:left，但是前提条件是float:left不影响content的位置的情况下，并且content的后面一个元素应该添除掉这个float。</p>
+                                    <p>&nbsp;</p>
+                                    <p><span style="color: #0000ff; font-size: 16px;"><em><strong>问题的根本所在：因为浮动的元素不占空间，所以容器元素不包围它们。</strong></em></span></p>
+                                    <p>&nbsp;</p>
+                                    <p>本文到此结束，欢迎大虾们指点更多方法。</p></div><div id="MySignature"></div>
+                                <div class="clear"></div>
+                                <div id="blog_post_info_block">
+                                    <div id="BlogPostCategory"></div>
+                                    <div id="EntryTag"></div>
+                                    <div id="blog_post_info">
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div id="post_next_prev"></div>
+                                </div>
+
+                </section>
+                <div align="center">
+                    <section class="article-copyright">
+                        <p>
+                            上一篇：<a
+                                href=""></a>
+                            下一篇：<a
+                                href=""></a>
+                        </p>
+
+                    </section>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<footer class="media-bottom text-center">
+    <p><span class="glyphicon glyphicon-envelope"></span>邮箱：<a href="mailto:15669504940@163.com">15669504940@163.com</a>
+    </p>
+
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>学习本该如此</title>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/blog.css"/>
+    <link rel="stylesheet" href="../css/content.css"/>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</head>
+<header>
+    <nav class="navbar navbar-inverse navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">胡海康</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="../note.html">笔记</a></li>
+                    <li><a href="#">音乐</a></li>
+                    <li><a href="#">关于</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-success">搜索</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <article class="well">
+                <section class="article-content clearfix article-page">
+                    <h1 id="h1-web-"><a name="WEB开发基础知识" class="reference-link"></a><span class="header-link octicon octicon-link"></span>WEB开发基础知识</h1><h2 id="h2--world-wide-web-"><a name="万维网（world wide web）。" class="reference-link"></a><span class="header-link octicon octicon-link"></span>万维网（world wide web）。</h2><p>万维网是运行在互联网基础上的服务之一。可以把万维网看作是一个 相互连接的文档系统。</p>
+                    <h2 id="h2-html"><a name="HTML" class="reference-link"></a><span class="header-link octicon octicon-link"></span>HTML</h2><p>超文本标记语言，是一种创建超文本文档的语言。每个标签都有它对应的表现方式。</p>
+                    <h2 id="h2-http-"><a name="HTTP协议" class="reference-link"></a><span class="header-link octicon octicon-link"></span>HTTP协议</h2><p>如果我们要访问百度，需要在浏览器中输入 <a href="http://www.baidu.com">http://www.baidu.com</a> ,然后就会出现百度的首页。这个过程大致如下：</p>
+                    <ol>
+                        <li>DNS解析域名，找到对应的IP地址</li><li>向对应的IP地址发送HTTP请求</li><li>对应的主机应答请求，并且使用HTTP协议传输HTML文档</li><li>浏览器接收到传输内容，渲染解析<br>我们就看到了百度的首页了。</li></ol>
+                    <p>一个HTTP请求:</p>
+                    <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="lang-html"><span class="pln">GET / HTTP/1.1</span></code></li><li class="L1"><code class="lang-html"><span class="pln">HOST www.baidu.com</span></code></li><li class="L2"><code class="lang-html"></code></li><li class="L3"><code class="lang-html"><span class="pln">Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span></code></li><li class="L4"><code class="lang-html"><span class="pln">User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.91 Safari/537.36</span></code></li></ol></pre>
+                    <p>这个请求会发送到百度服务器的80端口（HTTP默认端口）<br>如果百度成功接受请求，就会传输百度的HTML文档到浏览器。</p>
+                    <h2 id="h2-web-"><a name="WEB服务器" class="reference-link"></a><span class="header-link octicon octicon-link"></span>WEB服务器</h2><p>WEB服务器是一个软件，它默认监听80端口。负责接收用户的请求 和 响应内容给用户请求。</p>
+                </section>
+                <div align="center">
+                    <section class="article-copyright">
+                        <p>
+                            上一篇：<a
+                                href=""></a>
+                            下一篇：<a
+                                href=""></a>
+                        </p>
+
+                    </section>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<footer class="media-bottom text-center">
+    <p><span class="glyphicon glyphicon-envelope"></span>邮箱：<a href="mailto:15669504940@163.com">15669504940@163.com</a></p>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+</body>
+</html>

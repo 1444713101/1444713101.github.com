@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>学习本该如此</title>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/blog.css"/>
+    <link rel="stylesheet" href="../css/content.css"/>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</head>
+<header>
+    <nav class="navbar navbar-inverse navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">胡海康</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="../note.html">笔记</a></li>
+                    <li><a href="#">音乐</a></li>
+                    <li><a href="#">关于</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-success">搜索</button>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <article class="well">
+                <section class="article-content clearfix article-page">
+                    <div id="topics">
+                        <div class = "post">
+                            <h1 class = "postTitle">
+                                <a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/mrweb/archive/2013/01/29/2881978.html">CSS布局之负margin-left的使用</a>
+                            </h1>
+                            <div class="clear"></div>
+                            <div class="postBody">
+                                <div id="cnblogs_post_body"><p><span style="font-size: 18px; font-family: verdana, geneva;">有这样一种情况，网页主体部分有3栏，看上去分别是：左(left)、中(main)、右(right)三栏。但是它的html结构如下 ：</span></p>
+                                    <div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="content"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 2</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="main"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 3</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>Hello,CSS &amp; HTML.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 4</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>I love this game.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 5</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="left"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 7</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>I'm the sub colum.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 9</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="right"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">10</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>I'm the extra colum.<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">p</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">11</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">12</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span></pre>
+                                    </div>
+                                    <p><span style="font-size: 18px; font-family: verdana, geneva;">现在，不能改变HTML的结构，请实现它们从左至右是分别是：left &nbsp; &nbsp;main &nbsp; &nbsp;right。</span></p>
+                                    <p><span style="font-size: 18px; font-family: verdana, geneva;">我能想到的实现它的方法常用有两种：</span></p>
+                                    <p><span style="font-size: 18px; font-family: verdana, geneva;">第1种：绝对定位（本文忽略）</span></p>
+                                    <p><span style="color: #ff0000;"><strong><span style="font-size: 18px; font-family: verdana, geneva;">第2种：margin-left的负值与float的结合</span></strong></span></p>
+                                    <p><span style="font-size: 18px; font-family: verdana, geneva;">下面我用第2种方法实现：</span></p>
+                                    <p><span style="font-size: 18px; font-family: verdana, geneva;">第1步：content固定宽度</span></p>
+                                    <div class="cnblogs_code">
+                                        <pre><span style="color: #008080;">1</span> <span style="color: #800000;">#content </span>{<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">950px</span>;<span style="color: #ff0000;"> overflow</span>:<span style="color: #0000ff;">hidden</span>;<span style="color: #ff0000;"> margin-bottom</span>:<span style="color: #0000ff;">10px</span>; }</pre>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <p><span style="font-size: 18px; font-family: verdana, geneva;">第2步：main &nbsp; &nbsp;left &nbsp; &nbsp;right都浮动起来（但是main与left 的位置不对）</span></p>
+                                    <div class="cnblogs_code">
+<pre><span style="color: #008080;">1</span> <span style="color: #800000;">#main </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">left</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">550px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#dedede</span>; }
+<span style="color: #008080;">2</span> <span style="color: #800000;">#left </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">left</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">190px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#F90</span>; }
+<span style="color: #008080;">3</span> <span style="color: #800000;">#right </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">right</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">190px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#3CC</span>; }</pre>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <p><span style="font-family: verdana, geneva; font-size: 18px;">第3步：main往右边挤，left往左边挤（下面只列出不同的CSS部分，注意_display:inline是为了IE6）</span></p>
+                                    <div class="cnblogs_code">
+<pre><span style="color: #008080;">1</span> <span style="color: #800000;">#main </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">left</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">550px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#dedede</span>;<span style="color: #ff0000;"> margin-left</span>:<span style="color: #0000ff;">200px</span>;<span style="color: #ff0000;"> _display</span>:<span style="color: #0000ff;">inline</span>; }
+<span style="color: #008080;">2</span> <span style="color: #800000;">#left </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">left</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">190px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#F90</span>;<span style="color: #ff0000;"> margin-left</span>:<span style="color: #0000ff;">-750px</span>; }</pre>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <p><span style="font-family: verdana, geneva; font-size: 18px;">最终，完整的CSS如下：</span></p>
+                                    <div class="cnblogs_code">
+<pre><span style="color: #008080;">1</span> <span style="color: #800000;">#content </span>{<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">950px</span>;<span style="color: #ff0000;"> overflow</span>:<span style="color: #0000ff;">hidden</span>;<span style="color: #ff0000;"> margin-bottom</span>:<span style="color: #0000ff;">10px</span>; }
+<span style="color: #008080;">2</span> <span style="color: #800000;">#main </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">left</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">550px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#dedede</span>;<span style="color: #ff0000;"> margin-left</span>:<span style="color: #0000ff;">200px</span>;<span style="color: #ff0000;"> _display</span>:<span style="color: #0000ff;">inline</span>; }
+<span style="color: #008080;">3</span> <span style="color: #800000;">#left </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">left</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">190px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#F90</span>;<span style="color: #ff0000;"> margin-left</span>:<span style="color: #0000ff;">-750px</span>; }
+<span style="color: #008080;">4</span> <span style="color: #800000;">#right </span>{<span style="color: #ff0000;"> float</span>:<span style="color: #0000ff;">right</span>;<span style="color: #ff0000;"> width</span>:<span style="color: #0000ff;">190px</span>;<span style="color: #ff0000;"> background</span>:<span style="color: #0000ff;">#3CC</span>; }</pre>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <p><span style="font-family: verdana, geneva; font-size: 18px;">本文在chrome &nbsp; firefox &nbsp; ie8 &nbsp; ie6下测试正常。</span><span style="font-family: verdana, geneva; font-size: 18px;">本文到此结束！</span></p></div><div id="MySignature"></div>
+                                <div class="clear"></div>
+                                <div id="blog_post_info_block">
+                                    <div id="BlogPostCategory"></div>
+                                    <div id="EntryTag"></div>
+                                    <div id="blog_post_info">
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div id="post_next_prev"></div>
+                                </div>
+
+                </section>
+                <div align="center">
+                    <section class="article-copyright">
+                        <p>
+                            上一篇：<a
+                                href=""></a>
+                            下一篇：<a
+                                href=""></a>
+                        </p>
+
+                    </section>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<footer class="media-bottom text-center">
+    <p><span class="glyphicon glyphicon-envelope"></span>邮箱：<a href="mailto:15669504940@163.com">15669504940@163.com</a>
+    </p>
+
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+</body>
+</html>
